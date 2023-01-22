@@ -5,6 +5,7 @@ const { userRegister } = require("./Routes/user_Register_Rout");
 const { product } = require("./Routes/product_Routes");
 const { cart } = require("./Routes/cart_Routes");
 let HomeRoute = require('./Routes/home_Routes')
+let Port = process.env.Port
 
 const { userAuthMiddleware } = require("./Middleware/userAuthMiddleware");
 const cors = require("cors");
@@ -21,7 +22,7 @@ app.use("/cart",  cart);
 
 app.use('/homepage',HomeRoute)
 
-app.listen(8000, async () => {
+app.listen(Port, async () => {
   try {
     await connect;
     console.log(`connect to Data Base 🚩🚩`);
