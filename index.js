@@ -1,7 +1,7 @@
 const express = require("express");
-const { userRegister } = require("./Routes/user_Register_Rout");
-const { product } = require("./Routes/product_Routes");
-const { cart } = require("./Routes/cart_Routes");
+const  userRegister  = require("./Routes/user_Register_Rout");
+const  product  = require("./Routes/product_Routes");
+const cart  = require("./Routes/cart_Routes")
 let HomeRoute = require('./Routes/home_Routes')
 const cors = require("cors");
 const {mongoose } = require("mongoose");
