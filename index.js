@@ -1,16 +1,15 @@
-require("dotenv").config();
 const express = require("express");
-const { connect } = require("./Config/db");
 const { userRegister } = require("./Routes/user_Register_Rout");
 const { product } = require("./Routes/product_Routes");
 const { cart } = require("./Routes/cart_Routes");
 let HomeRoute = require('./Routes/home_Routes')
-
-const { userAuthMiddleware } = require("./Middleware/userAuthMiddleware");
 const cors = require("cors");
-
+const {mongoose } = require("mongoose");
 const app = express();
+
+
 app.use(cors());
+
 app.use(express.json());
 
 app.use("/user", userRegister);
@@ -21,12 +20,8 @@ app.use("/cart",  cart);
 
 app.use('/homepage',HomeRoute)
 
-app.listen(8000, async () => {
-  try {
-    await connect;
-    console.log(`connect to Data Base 🚩🚩`);
-  } catch (error) {
-    console.log(` errror is ====> ${error} 🙋‍♂️`);
-  }
-  console.log(`server is running on 8000 🚩🚩`);
-});
+mongoose.connect('mongodb+srv://pranitkhadse:pranit@cluster0.hqcdxvk.mongodb.net/BecoolDB?retryWrites=true&w=majority').then((res)=>{
+  app.listen(8000, async () => {
+    console.log('Server has been started')
+  });
+})
