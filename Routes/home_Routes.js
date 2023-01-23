@@ -7,7 +7,7 @@ HomeRoute.get('/',async(req,res)=>{
         let HomePageDetail = await HomeModel.find()
         res.send(HomePageDetail)
     }catch(err){
-        res.send(err)
+        res.send({"err":err})
     }
 })
 
