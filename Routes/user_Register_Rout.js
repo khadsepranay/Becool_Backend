@@ -4,7 +4,6 @@ const { UserModel } = require("../Model/user_Register_Model");
 const bcrypt = require("bcrypt");
 var jwt = require("jsonwebtoken");
 const userRegister = express.Router();
-let Key = process.env.Key
 
 userRegister.post('/register',async(req,res)=>{
   let {email,password,username} = req.body
@@ -40,7 +39,7 @@ userRegister.post('/login',async(req,res)=>{
           res.send(err)
         }
         if(result){
-          let token = jwt.sign({userid:User._id},Key)
+          let token = jwt.sign({userid:User._id},'AccessToken')
           res.send({
             msg:'Login Successfully',
             token
