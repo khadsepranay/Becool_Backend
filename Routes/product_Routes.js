@@ -42,4 +42,4 @@ product.post("/mens/add", async (req, res) => {
 // product.get("/women", (req, res) => {});
 
 // product.get("/phonecover", (req, res) => {});
-module.exports = { product };
+module.exports =  product ;

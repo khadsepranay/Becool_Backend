@@ -151,4 +151,4 @@ cart.delete('/success',userAuthMiddleware,async(req,res)=>{
 
 
 
-module.exports = { cart };
+module.exports =  cart ;
