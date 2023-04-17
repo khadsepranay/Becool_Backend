@@ -18,7 +18,6 @@ app.use("/product", product);
 
 app.use("/cart",  cart);
 
-app.use('/',HomeRoute)
 
 mongoose.connect('mongodb+srv://pranitkhadse:pranit@cluster0.hqcdxvk.mongodb.net/BecoolDB?retryWrites=true&w=majority').then((res)=>{
   app.listen(8000, async () => {
