@@ -48,12 +48,3 @@ userRegister.post('/login',async(req,res)=>{
           res.send('Password is wrong')
         }
       })
-    }else{
-      res.status(401).send('Authentication failed')
-    }
-  }catch(err){
-    res.send(err)
-  }
-})
-
-module.exports =  userRegister ;
